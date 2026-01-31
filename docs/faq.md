@@ -26,10 +26,24 @@ It is designed to be used **alongside or after SAST** to focus attention on the 
 
 ---
 
+## Does ZeroHour use AI?
+Yes.
+
+ZeroHour uses AI for reasoning, prioritization explanation, and fix suggestions.
+It does not rely on AI for raw code scanning.
+
+---
+
+## What role does Semgrep play?
+Semgrep performs the static analysis and generates structured findings.
+ZeroHour builds decision logic on top of these findings.
+
+---
+
 ## How many issues does ZeroHour report?
 Maximum of **10**.
 
-This limit is intentional and enforced. You can adjust the value via settings.
+This limit is intentional and enforced. You can adjust the value.
 
 ---
 
