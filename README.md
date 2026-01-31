@@ -87,9 +87,42 @@ zerohour analyze
 ---
 
 ## Documentation
-- 📄 **Git Workflow:** [docs/git_workflow.md](./docs/git_workflow.md "Git Workflow documentation")
-- 📄 **Architecture:** [docs/architecture.md](./docs/architecture.md "Architecture documentation")
-- 📄 **Analysis Logic:** [docs/analysis_logic.md](./docs/analysis_logic.md "Analysis Logic documentation")
+
+Start here:
+- 📘 **Overview** — what ZeroHour is and why it exists
+  [docs/overview.md](./docs/overview.md "Overview of ZeroHour")
+
+Getting started:
+- ⚙️ **Installation** — setup and build instructions
+  [docs/installation.md](./docs/installation.md "Installation guide")
+- ▶️ **Usage** — how to run the CLI and interpret output
+  [docs/usage.md](./docs/usage.md "Usage guide")
+- ❓ **FAQ** — common questions and clarifications
+  [docs/faq.md](./docs/faq.md "Frequently asked questions and answers")
+
+How it works:
+- 🧱 **Architecture** — system structure and data flow
+  [docs/architecture.md](./docs/architecture.md "Architecture of ZeroHour")
+- 🧠 **Analysis Logic** — how failure impact is determined
+  [docs/analysis_logic.md](./docs/analysis_logic.md "Analysis of ZeroHour")
+
+Reference:
+- 📖 **Glossary** — project-specific terminology
+  [docs/glossary.md](./docs/glossary.md "Glossary")
+- ⚠️ **Limitations** — explicit and intentional constraints
+  [docs/limitations.md](./docs/limitations.md "Limitations of ZeroHour")
+
+Project & contribution:
+- 🗺️ **Roadmap** — current scope and next steps
+  [docs/roadmap.md](./docs/roadmap.md "Roadmap")
+- 🧭 **Execution Plan** — development phases and priorities
+  [docs/execution_plan.md](./docs/execution_plan.md "Execution plan")
+- 🔀 **Git Workflow** — contribution process and rules
+  [docs/git_workflow.md](./docs/git_workflow.md "Git workflow")
+- 🧑‍💻 **Contributing** — how to contribute safely
+  [docs/contributing.md](./docs/contributing.md "Contributing guide")
+
+📂 Full documentation index: [docs/README.md](./docs/README.md "Index of Docs")
 
 ---
 
