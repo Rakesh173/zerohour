@@ -1,8 +1,8 @@
 # ZeroHour
 
-- 📄 **Git Workflow:** [GIT_WORKFLOW.md](./GIT_WORKFLOW.md)
-- 📄 **Execution Plan:** [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
-- 📄 **How it works (detail):** [docs/HOW_IT_WORKS.md](./docs/HOW_IT_WORKS.md)
+- 📄 **Git Workflow:** [GIT_WORKFLOW.md](./GIT_WORKFLOW.md "Git Workflow markdown")
+- 📄 **Execution Plan:** [EXECUTION_PLAN.md](./EXECUTION_PLAN.md "Execution Plan markdown")
+- 📄 **How it works (detail):** [docs/HOW_IT_WORKS.md](./docs/HOW_IT_WORKS.md "Detailed Documentation")
 
 ZeroHour is a terminal-native CLI that identifies **what breaks the business first** in a codebase.
 
@@ -105,12 +105,12 @@ npm link && zerohour analyze       # global install (may need sudo for link)
 ## Contributing
 
 Before making any changes, read the Git workflow:  
-[GIT_WORKFLOW.md](./GIT_WORKFLOW.md)
+[GIT_WORKFLOW.md](./GIT_WORKFLOW.md "Git Workflow markdown")
 
 ---
 
 ## Contributors
-Built during the BeachHack Hackathon.
+Built during the [BeachHack](https://beachhack.in "Beach Hack hackthon website") Hackathon.
 
 <p align="center">
   <a href="https://github.com/Samurai-beachhack/zerohour/graphs/contributors">
