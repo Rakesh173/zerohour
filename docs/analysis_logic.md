@@ -67,7 +67,7 @@ No numeric risk score is shown to the user.
 
 ## Forced Prioritization Rule
 
-- Only **top 3** findings are reported
+- Only **top 10** findings are reported
 - Everything else is discarded
 
 This is intentional.

@@ -12,7 +12,7 @@ Ship a CLI that:
 
 1. Analyzes a codebase statically
 2. Identifies **failure-prone areas**
-3. Outputs **only the top 3 issues**
+3. Outputs **only the top 10 issues**
 4. Explains **business impact**, not vulnerabilities
 
 Anything outside this is out of scope.
@@ -82,12 +82,12 @@ Deliverable:
 
 ### 5. Forced Prioritization
 - Sort by failure impact
-- Drop everything except **Top 3**
+- Drop everything except **Top 10**
 
 This rule is strict.
 
 Deliverable:
-- Exactly 3 findings or fewer
+- Exactly 10 findings or fewer
 
 ---
 
@@ -142,7 +142,7 @@ These will **not** be implemented in this phase:
 
 ZeroHour is considered successful if:
 
-- It always outputs ≤ 5 issues
+- It always outputs ≤ 10 issues
 - Results are deterministic
 - A non-technical reader understands *why* something matters
 - A technical user knows *where* to look next

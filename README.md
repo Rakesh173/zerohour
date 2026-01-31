@@ -25,7 +25,7 @@ They do **not know what to fix first**
 
 ZeroHour analyzes a codebase and outputs:
 
-- **Only the top 5 issues**
+- **Only the top 10 issues**
 - Ranked by **failure impact**
 - Explained in **business consequences**
 
@@ -40,7 +40,7 @@ It focuses on:
 ## Core Principles
 
 - Failure-first, not vulnerability-first
-- Forced prioritization (Top 5 only)
+- Forced prioritization (Top 10 only)
 - Business impact over technical noise
 - Deterministic and auditable logic
 - Terminal-only workflow
