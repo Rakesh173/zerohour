@@ -1,170 +1,170 @@
 # ZeroHour – Execution Plan
 
+This document defines **what to build, in what order, and why**.
+
+Scope is intentionally constrained to ship a **working decision-layer CLI**.
+
+---
+
 ## Goal (Non-Negotiable)
 
-Ship a **working CLI** that:
+Ship a CLI that:
 
-1. Analyzes a codebase
-2. Finds **failure-prone areas**
-3. Outputs **Top 3 business-impact failures**
-4. Explains **why it matters + how to fix**
+1. Analyzes a codebase statically
+2. Identifies **failure-prone areas**
+3. Outputs **only the top 3 issues**
+4. Explains **business impact**, not vulnerabilities
 
-If this works end-to-end, the project is useful even without prizes.
-
----
-
-## Scope Lock (Critical)
-
-### ❌ Explicitly NOT Doing
-
-- Full SAST
-- Multi-language analysis
-- ML / AI
-- High accuracy tuning
-- Dashboards / UI
-
-### ✅ Doing
-
-- Opinionated analysis
-- Heuristic-based detection
-- Deterministic output
-- Business-focused explanations
+Anything outside this is out of scope.
 
 ---
 
-## First 3 Core Features (ONLY THESE)
+## Core Assumptions
 
-### Core Feature 1: Failure Surface Detection
-
-**What can break the system**
-
-Strict scope:
-
-- HTTP handlers / controllers
-- Entry-point functions
-- External boundaries:
-  - Payment
-  - Auth
-  - User input
-  - File I/O
-  - Network calls
-
-Implementation:
-
-- Regex + lightweight AST
-- Language: **JavaScript only**
-
-Output example:
-Detected 12 failure surfaces
-
+- Static analysis only
+- Deterministic logic
+- Terminal-native output
 
 ---
 
-### Core Feature 2: Impact Scoring
+## Phase 1 — Foundation (Must Work First)
 
-**Rank by business damage, not severity**
+### 1. CLI Skeleton
+- `zerohour analyze` command
+- Argument parsing (`-C`, `--no-box`)
+- Exit codes
+- Error handling
 
-Scoring factors:
-
-- User-facing?
-- Critical path? (auth, payment, writes)
-- Catastrophic failure? (crash, data loss, denial)
-
-Hardcoded priority:
-```
-payment > auth > data write > read > internal
-```
-
-Output:
-```
-Ranked failure surfaces by impact
-```
+Deliverable:
+- CLI runs reliably on a sample repo
 
 ---
 
-### Core Feature 3: Top-3 Output
+### 2. File Scanner
+- Traverse directory
+- Filter analyzable files
+- Ignore noise (node_modules, build output, etc.)
 
-**Forced prioritization**
-
-Final CLI output:
-
-- Exactly **3 issues**
-- Each includes:
-  - What fails
-  - Why it matters (business)
-  - How it fails (technical)
-  - How to fix (actionable)
-
-If this works, ZeroHour’s core idea is proven.
+Deliverable:
+- Consistent file list for analysis
 
 ---
 
-## Stack (Minimal, Fast)
+## Phase 2 — Signal Extraction
 
-### Language
-- **Node.js (JS over TS for speed)**
+### 3. Structural Signal Collection
+Extract **structural signals only**:
+- Entry points
+- High fan-in logic
+- Central orchestration files
+- Dependency concentration
 
-### CLI
-- `commander` or `process.argv`
+No semantic understanding.
+No execution flow.
 
-### Parsing
-- `fs`, `glob`
-- Regex
-- Optional: `@babel/parser` if needed
-
-### Output
-- Plain text
-- Optional JSON flag
-
-No DB. No config. No plugins.
+Deliverable:
+- Raw signals per file/module
 
 ---
 
-## Repo Structure (Freeze)
+## Phase 3 — Failure Analysis
 
-```
-zerohour/
-├─ src/
-│  ├─ index.js            # CLI entry
-│  ├─ scanner/
-│  │  ├─ discover.js      # failure surface detection
-│  │  └─ classify.js      # type: payment/auth/etc
-│  ├─ scoring/
-│  │  └─ score.js
-│  ├─ explain/
-│  │  └─ translate.js
-│  └─ output/
-│     └─ printer.js
-├─ examples/
-├─ README.md
-```
+### 4. Failure Impact Heuristics
+Apply deterministic rules to estimate:
+- Failure propagation
+- Blast radius
+- Isolation vs coupling
 
+Deliverable:
+- Ranked internal list of risky areas
 
 ---
 
-## Execution Reality
+### 5. Forced Prioritization
+- Sort by failure impact
+- Drop everything except **Top 3**
 
-- Clear problem
-- Clear differentiation
-- Working demo
+This rule is strict.
 
-Why ZeroHour stands out:
-
-- Everyone has scanners
-- Nobody has **decision clarity**
-- Top-3 constraint is memorable
-- Terminal-native builds trust
+Deliverable:
+- Exactly 3 findings or fewer
 
 ---
 
-## Definition of Done
+## Phase 4 — Reporting
 
-Before submission:
+### 6. Explainable Output
+For each finding:
+- What can fail
+- Why it matters
+- What breaks
+- Where to look in code
 
-- `failfast analyze ./example-app`
-- [X] Produces **3 ranked issues**
-- [X] Output is readable
-- [X] Works offline
+Formats:
+- Boxed terminal output
+- Plain text (`--no-box`)
 
-If this is met, the project is successful even outside the hackathon.
+Deliverable:
+- Human-readable, decision-ready output
+
+---
+
+## Phase 5 — Validation
+
+### 7. Sanity Testing
+- Run against small sample projects
+- Ensure output is:
+  - Stable
+  - Repeatable
+  - Understandable without code knowledge
+
+Deliverable:
+- Confidence that results are explainable
+
+---
+
+## Explicitly Out of Scope
+
+These will **not** be implemented in this phase:
+
+- CVE detection
+- Dependency vulnerability scanning
+- Risk scores
+- Severity numbers
+- Dashboards
+- Config files
+- Language-specific deep parsing
+- Runtime analysis
+
+---
+
+## Success Criteria
+
+ZeroHour is considered successful if:
+
+- It always outputs ≤ 5 issues
+- Results are deterministic
+- A non-technical reader understands *why* something matters
+- A technical user knows *where* to look next
+
+---
+
+## Failure Conditions
+
+The project fails if:
+- It behaves like a SAST tool
+- It outputs too many findings
+- It requires explanation outside the tool
+- It prioritizes quantity over decision clarity
+
+---
+
+## Notes
+
+This plan optimizes for:
+- Speed of development
+- Clarity of purpose
+- Honest scope
+
+Anything that dilutes the **decision-layer** goal is rejected.
 
