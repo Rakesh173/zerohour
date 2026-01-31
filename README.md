@@ -87,16 +87,16 @@ zerohour analyze
 ---
 
 ## Documentation
-- 📄 **Git Workflow:** [docs/GIT_WORKFLOW.md](./docs/GIT_WORKFLOW.md "Git Workflow documentation")
-- 📄 **Architecture:** [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md "Architecture documentation")
-- 📄 **Analysis Logic:** [docs/ANALYSIS_LOGIC.md](./docs/ANALYSIS_LOGIC.md "Analysis Logic documentation")
+- 📄 **Git Workflow:** [docs/git_workflow.md](./docs/git_workflow.md "Git Workflow documentation")
+- 📄 **Architecture:** [docs/architecture.md](./docs/architecture.md "Architecture documentation")
+- 📄 **Analysis Logic:** [docs/analysis_logic.md](./docs/analysis_logic.md "Analysis Logic documentation")
 
 ---
 
 ## Contributing
 
 Before making any changes, read the Git workflow:  
-[GIT_WORKFLOW.md](./GIT_WORKFLOW.md "Detailed Git Workflow docs")
+[git_workflow.md](./git_workflow.md "Detailed Git Workflow docs")
 
 ---
 
